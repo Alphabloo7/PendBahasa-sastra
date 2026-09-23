@@ -125,7 +125,14 @@
     .btn-outline { border-color: rgba(255,255,255,.72); color: #fff; background: rgba(255,255,255,.06); }
     .btn-light { background: #fff; color: var(--uns-blue); border-color: #cfe1ed; }
 
-    /* --- Header & Nav: desain awal --- */
+    /* --- Header & Nav: sticky header --- */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 18px rgba(0, 50, 100, .15);
+    }
+
     .program-nav {
       background: #0084C7;
       color: #fff;
@@ -2101,53 +2108,56 @@
 
 <body>
 
-  <!-- HEADER: dibuat sama seperti versi awal yang ditunjukkan pengguna -->
-  <nav class="program-nav" aria-label="Navigasi program studi">
-    <div class="container nav-inner">
-      <div class="program-name">S2 PENDIDIKAN BAHASA DAN SASTRA DAERAH</div>
-      <div class="program-menu">
-        <a href="#profil">PROFIL</a>
-        <a href="#kurikulum">KURIKULUM</a>
-        <a href="#akreditasi">AKREDITASI</a>
-        <a href="#kepakaran">DOSEN &amp; KEPAKARAN</a>
-        <a href="#alumni">ALUMNI</a>
+  <!-- STICKY HEADER: Pinned at top of page when scrolling -->
+  <div class="sticky-header">
+    <nav class="program-nav" aria-label="Navigasi program studi">
+      <div class="container nav-inner">
+        <div class="program-name">S2 PENDIDIKAN BAHASA DAN SASTRA DAERAH</div>
+        <div class="program-menu">
+          <a href="#profil">PROFIL</a>
+          <a href="#kurikulum">KURIKULUM</a>
+          <a href="#akreditasi">AKREDITASI</a>
+          <a href="#kepakaran">DOSEN &amp; KEPAKARAN</a>
+          <a href="#alumni">ALUMNI</a>
+        </div>
+        <a class="nav-cta" href="https://spmb.uns.ac.id/pendaftar/dashboard/index"
+          target="_blank" rel="noopener">DAFTAR ↗</a>
       </div>
-      <a class="nav-cta" href="https://spmb.uns.ac.id/pendaftar/dashboard/index"
-        target="_blank" rel="noopener">DAFTAR ↗</a>
-    </div>
-  </nav>
-  <div class="header-yellow-line"></div>
+    </nav>
+    <div class="header-yellow-line"></div>
+  </div>
 
-  <header class="site-header">
-    <div class="container header-main">
-      <div class="header-brand-left">
-        <a class="brand" href="#top" aria-label="Pascasarjana FKIP UNS">
-          <img class="logo-uns" src="assets/logo-uns.png" alt="Logo Universitas Sebelas Maret" />
-          <img class="logo-diktisaintek" src="assets/logo_diktisaintek.png" alt="Logo Diktisaintek Berdampak" />
-          <div class="header-v-divider"></div>
-          <div class="brand-copy">
-            <strong>PASCASARJANA FKIP</strong>
-            <span>Universitas Sebelas Maret - Surakarta</span>
-          </div>
-        </a>
-      </div>
+    <header class="site-header">
+      <div class="container header-main">
+        <div class="header-brand-left">
+          <a class="brand" href="#top" aria-label="Pascasarjana FKIP UNS">
+            <img class="logo-uns" src="assets/logo-uns.png" alt="Logo Universitas Sebelas Maret" />
+            <img class="logo-diktisaintek" src="assets/logo_diktisaintek.png" alt="Logo Diktisaintek Berdampak" />
+            <div class="header-v-divider"></div>
+            <div class="brand-copy">
+              <strong>PASCASARJANA FKIP</strong>
+              <span>Universitas Sebelas Maret - Surakarta</span>
+            </div>
+          </a>
+        </div>
 
-      <div class="header-search-wrapper">
-        <a class="header-search" href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106"
-          target="_blank" rel="noopener" aria-label="Cari kepakaran di Expert UNS">
-          <input type="text" readonly placeholder="Cari dosen / bidang kepakaran..." tabindex="-1" />
-          <button type="button" aria-label="Cari">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-        </a>
+        <div class="header-search-wrapper">
+          <a class="header-search" href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106"
+            target="_blank" rel="noopener" aria-label="Cari kepakaran di Expert UNS">
+            <input type="text" readonly placeholder="Cari dosen / bidang kepakaran..." tabindex="-1" />
+            <button type="button" aria-label="Cari">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </a>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+
 
   <main id="top">
     <!-- HERO -->
@@ -2563,9 +2573,6 @@
         <div class="section-heading">
           <span class="eyebrow">Karier &amp; Fasilitas</span>
           <h2>Peluang Karier dan Fasilitas</h2>
-          <p>
-            Peluang karier dan fasilitas yang tercantum pada profil program studi.
-          </p>
         </div>
 
         <div class="two-col">
@@ -2614,7 +2621,6 @@
         <div class="section-heading">
           <span class="eyebrow">Pengajar &amp; Keahlian</span>
           <h2>Bidang Keahlian Program Studi</h2>
-          <p>Bidang pengajar dan keahlian sebagaimana tercantum pada materi program studi.</p>
         </div>
 
         <a class="expert-banner" href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106" target="_blank" rel="noopener">
@@ -2654,7 +2660,6 @@
         <div class="section-heading">
           <span class="eyebrow">Alumni &amp; Testimoni</span>
           <h2>Potret Lulusan &amp; Pengalaman Belajar</h2>
-          <p>Testimoni alumni dan mahasiswa sebagaimana tercantum pada poster program studi.</p>
         </div>
 
         <div class="graduate-grid">
